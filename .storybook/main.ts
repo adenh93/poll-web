@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/svelte-vite';
+import path from "path"
 
 const config: StorybookConfig = {
   "stories": [
@@ -16,6 +17,15 @@ const config: StorybookConfig = {
   },
   "docs": {
     "autodocs": "tag"
-  }
+  },
+  viteFinal: async (config) => ({
+    ...config,
+    resolve: {
+      alias: {
+        ...config.resolve?.alias,
+        '@app': path.join(__dirname, "../src"),
+      }
+    }
+  })
 };
 export default config;
