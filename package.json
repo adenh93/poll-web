@@ -16,6 +16,7 @@
     "@storybook/addon-essentials": "^7.0.0-beta.43",
     "@storybook/addon-interactions": "^7.0.0-beta.43",
     "@storybook/addon-links": "^7.0.0-beta.43",
+    "@storybook/addon-svelte-csf": "^2.0.11",
     "@storybook/blocks": "^7.0.0-beta.43",
     "@storybook/svelte": "^7.0.0-beta.43",
     "@storybook/svelte-vite": "^7.0.0-beta.43",
@@ -34,6 +35,10 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@felte/reporter-svelte": "^1.1.5",
+    "@felte/validator-yup": "^1.0.11",
+    "felte": "^1.2.7",
+    "svelte-inline-svg": "^1.2.0",
+    "yup": "^0.32.11"
   }
 }
