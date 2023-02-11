@@ -1,14 +1,14 @@
 <script lang="ts">
-  import MainLayout from "@app/components/layouts/MainLayout";
-  import PollForm from "@app/components/ui/PollForm";
-  import Steps from "@app/components/ui/Steps";
+  import { MainLayout } from "@app/components/layouts";
+  import { PollFormContainer } from "@app/components/containers";
+  import { Steps } from "@app/components/ui";
 </script>
 
 <MainLayout>
   <div class="primary-container" slot="primary">
     <h1>Create a Poll in a Few Easy Steps!</h1>
     <div class="form-card">
-      <PollForm />
+      <PollFormContainer />
     </div>
   </div>
   <div class="secondary-container" slot="secondary">
