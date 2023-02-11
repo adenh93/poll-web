@@ -1,8 +1,11 @@
 import * as yup from "yup"
 
 const newPollSchema = yup.object({
-  name: yup.string().min(5).max(100).required("Enter a descriptive name."),
-  description: yup.string(),
+  name: yup.string()
+    .min(5, "Poll name must be at least 5 characters.")
+    .max(100, "Poll name cannot be more than 100 characters.")
+    .required("Enter a descriptive name."),
+  description: yup.string().nullable(),
   endDate: yup
     .string()
     .required("An end date must be provided when creating a poll."),
