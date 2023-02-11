@@ -8,9 +8,9 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@app/*": ["*"]
+      "@app/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
