@@ -9,8 +9,7 @@
 
 <style>
   .container {
-    width: 100%;
-    padding: 0.2rem;
+    padding: 1.5rem;
   }
 
   .primary-section {
