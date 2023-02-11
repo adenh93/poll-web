@@ -1,3 +1,4 @@
+import "@app/reset.css"
 import '@app/App.css'
 import App from '@app/App.svelte'
 
