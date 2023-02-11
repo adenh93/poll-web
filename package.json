@@ -37,6 +37,7 @@
   "dependencies": {
     "@felte/reporter-svelte": "^1.1.5",
     "@felte/validator-yup": "^1.0.11",
+    "@sveltestack/svelte-query": "^1.6.0",
     "felte": "^1.2.7",
     "svelte-inline-svg": "^1.2.0",
     "yup": "^0.32.11"
