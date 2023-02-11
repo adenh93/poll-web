@@ -3,10 +3,8 @@
   export let label: string;
 </script>
 
-<div class="input-wrapper">
-  <textarea {name} {...$$restProps} />
-  <label for={name}>{label}</label>
-</div>
+<textarea {name} {...$$restProps} />
+<label for={name}>{label}</label>
 
 <style>
   textarea {
@@ -18,12 +16,23 @@
     resize: none;
   }
 
-  .input-wrapper > textarea:focus {
+  label {
+    position: absolute;
+    top: -0.7rem;
+    left: 2.3rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+    background-color: var(--bg-white);
+    font-size: 1.4rem;
+    font-weight: light;
+  }
+
+  textarea:focus {
     border: 2px solid var(--purple-light);
     outline: 0;
   }
 
-  .input-wrapper > textarea:focus + label {
+  textarea:focus + label {
     color: var(--purple-light);
   }
 </style>
