@@ -10,6 +10,11 @@ const newPollSchema = yup.object({
   endDate: yup
     .string()
     .required("An end date must be provided when creating a poll.")
+    .test(
+      'endDateInFuture',
+      "End date must be in the future",
+      value => !value || new Date(value) >= new Date()
+    )
     .default(""),
   choices: yup
     .array()
