@@ -17,6 +17,7 @@
     background-size: cover;
     border-radius: 0.5rem;
     padding: 10rem 3rem;
+    min-height: 70rem;
   }
 
   .secondary-section {
