@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
   import { createForm } from "felte";
   import { validator } from "@felte/validator-yup";
   import { reporter } from "@felte/reporter-svelte";
@@ -13,8 +14,12 @@
 
   type RemoveChoiceEventData = { key: string };
 
+  const dispatch = createEventDispatcher();
+
   const createPollResult = useMutation((body: NewPollSchema) =>
-    post(PollEndpoints.CreatePoll, { body: JSON.stringify(body) })
+    post<ApiTypes.CreatedPoll>(PollEndpoints.CreatePoll, {
+      body: JSON.stringify(body),
+    })
   );
 
   const { form, data, addField, setFields, setErrors } =
@@ -23,11 +28,13 @@
       initialValues: schema.cast({
         choices: [...new Array(2)].map((_) => ({ name: "" })),
       }),
-      onSubmit: (values) => {
-        $createPollResult.mutateAsync({
+      onSubmit: async (values) => {
+        const receipt = await $createPollResult.mutateAsync({
           ...values,
           endDate: new Date(values.endDate).toISOString(),
         });
+
+        dispatch("createPoll", { receipt });
       },
     });
 
