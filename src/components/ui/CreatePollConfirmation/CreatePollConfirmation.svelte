@@ -18,7 +18,8 @@
     below and share it with your network so they can participate!
   </p>
   <CopyToClipboard text={pollUrl} />
-  <Button on:click={createAnotherPoll} type="button">
+  <Button type="button">Go to My Poll</Button>
+  <Button on:click={createAnotherPoll} variant="secondary" type="button">
     Create Another Poll
   </Button>
 </div>

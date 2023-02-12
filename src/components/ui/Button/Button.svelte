@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let variant: "primary" | "text" = "primary";
+  type ButtonVariant = "primary" | "secondary" | "text";
+
+  export let variant: ButtonVariant = "primary";
 
   const buttonClass = `btn-${variant}`;
 </script>
@@ -23,14 +25,23 @@
     cursor: not-allowed;
   }
 
-  button.btn-primary {
+  button.btn-primary,
+  button.btn-secondary {
     padding: 2rem;
     width: 100%;
-    background: var(--gradient-button);
     border: none;
     border-radius: 1rem;
     font-size: 2.2rem;
     text-transform: uppercase;
+  }
+
+  button.btn-primary {
+    background: var(--gradient-button);
+    color: var(--text-white);
+  }
+
+  button.btn-secondary {
+    background: #90a4ae;
     color: var(--text-white);
   }
 
