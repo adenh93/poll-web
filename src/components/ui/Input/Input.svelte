@@ -13,11 +13,11 @@
     border: 2px solid var(--border-color);
     width: 100%;
     box-sizing: border-box;
-    cursor: not-allowed;
   }
 
   input:disabled {
     border: 2px solid var(--border-color-disabled);
+    cursor: not-allowed;
   }
 
   input[aria-invalid="true"] {
