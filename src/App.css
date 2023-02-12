@@ -11,6 +11,7 @@
   --purple-main: #ba68c8;
   --purple-dark: #623aa2;
   --border-color: #757575;
+  --border-color-disabled: #CACACA;
   --status-error: #e57373;
   --gradient-bg: linear-gradient(135deg, var(--purple-lightest), var(--purple-dark) 90%);
   --gradient-button: linear-gradient(var(--purple-light), var(--purple-main));

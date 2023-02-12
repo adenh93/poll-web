@@ -16,6 +16,10 @@
     resize: none;
   }
 
+  textarea:disabled {
+    border: 2px solid var(--border-color-disabled);
+  }
+
   label {
     position: absolute;
     top: -0.7rem;
@@ -34,5 +38,9 @@
 
   textarea:focus + label {
     color: var(--purple-light);
+  }
+
+  textarea:disabled + label {
+    color: var(--border-color-disabled);
   }
 </style>

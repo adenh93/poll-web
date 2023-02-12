@@ -19,6 +19,10 @@
     align-items: center;
   }
 
+  button:disabled {
+    cursor: not-allowed;
+  }
+
   button.btn-primary {
     padding: 2rem;
     width: 100%;
@@ -30,6 +34,10 @@
     color: var(--text-white);
   }
 
+  button.btn-primary:disabled {
+    filter: brightness(80%);
+  }
+
   button.btn-text {
     padding: 0;
     background: none;
@@ -38,5 +46,9 @@
     font-size: 1.4rem;
     font-weight: 300;
     color: var(--text-body);
+  }
+
+  button.btn-text:disabled {
+    filter: brightness(200%);
   }
 </style>

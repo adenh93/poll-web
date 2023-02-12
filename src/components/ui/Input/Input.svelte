@@ -13,6 +13,11 @@
     border: 2px solid var(--border-color);
     width: 100%;
     box-sizing: border-box;
+    cursor: not-allowed;
+  }
+
+  input:disabled {
+    border: 2px solid var(--border-color-disabled);
   }
 
   input[aria-invalid="true"] {
@@ -46,5 +51,9 @@
 
   input:focus + label {
     color: var(--purple-light);
+  }
+
+  input:disabled + label {
+    color: var(--border-color-disabled);
   }
 </style>
