@@ -1,15 +1,28 @@
+import { GenericError, ValidationError } from "./errors"
+
 type PostOptions = Omit<RequestInit, "method">
 type GetOptions = Omit<PostOptions, "body">
 
-const request = <T>(url: string, options: RequestInit): Promise<T> =>
-  fetch(url, {
+const request = async <T>(url: string, options: RequestInit): Promise<T> => {
+  const res = await fetch(url, {
     ...options,
     headers: {
       ...options.headers,
       "Content-Type": "application/json"
     }
+  }).catch(err => {
+    throw new GenericError({ message: err.message });
   })
-    .then((res: Response) => res.json())
+
+  const json = await res.json()
+
+  if (!res.ok) {
+    if (json.name === "ValidationError") throw new ValidationError(json)
+    throw new GenericError(json)
+  }
+
+  return json
+}
 
 export const get = <T>(url: string, options: GetOptions): Promise<T> => request(url, { method: "GET", ...options })
 
