@@ -15,5 +15,11 @@ declare namespace ApiTypes {
     description?: string
     endDate: string
     choices: PollChoice[]
+    results: PollResult[]
+  }
+
+  interface PollResult {
+    choiceId: string
+    voteCount: number
   }
 }
