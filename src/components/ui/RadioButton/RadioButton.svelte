@@ -51,8 +51,8 @@
   }
 
   label .checkmark:after {
-    top: 0.15rem;
-    left: 0.15rem;
+    top: 0.2rem;
+    left: 0.2rem;
     width: 1.8rem;
     height: 1.8rem;
     border-radius: 50%;
