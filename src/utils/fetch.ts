@@ -24,6 +24,6 @@ const request = async <T>(url: string, options: RequestInit): Promise<T> => {
   return json
 }
 
-export const get = <T>(url: string, options: GetOptions): Promise<T> => request(url, { method: "GET", ...options })
+export const get = <T>(url: string, options?: GetOptions): Promise<T> => request(url, { method: "GET", ...options })
 
-export const post = <T>(url: string, options: PostOptions): Promise<T> => request(url, { method: "POST", ...options })
+export const post = <T>(url: string, options?: PostOptions): Promise<T> => request(url, { method: "POST", ...options })
